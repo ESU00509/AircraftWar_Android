@@ -1,0 +1,1 @@
+先查看AircraftWar-base/src目录下的java编写的飞机大战游戏代码，然后使用java语言把它迁移到D:\study\SoftwareConstruction\AW这个AndroidStudio模板下面将其构建为一个安卓应用，修改D:\study\SoftwareConstruction\AW\app\src中的文件，不要在原文件修改。飞机的射击、伤害等逻辑不要改动，仍使用原来的图片和音频，实现功能的时候如果用现有的库更好就不要自己编写，用了的库需要导入要告诉我，最后实现了什么功能完整告诉我，怎么运行这个项目详细告诉我。

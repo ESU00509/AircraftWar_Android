@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="32dp"
+    android:background="#FF1A1A2E">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="✈ 飞机大战 ✈"
+        android:textColor="#FFFFFFFF"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="48dp" />
+
+    <Button
+        android:id="@+id/btn_easy"
+        android:layout_width="220dp"
+        android:layout_height="56dp"
+        android:text="简单模式"
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/btn_common"
+        android:layout_width="220dp"
+        android:layout_height="56dp"
+        android:text="普通模式"
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/btn_inferno"
+        android:layout_width="220dp"
+        android:layout_height="56dp"
+        android:text="炼狱模式"
+        android:textSize="18sp"
+        android:layout_marginBottom="32dp" />
+
+    <CheckBox
+        android:id="@+id/cb_sound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="开启音效"
+        android:textColor="#FFFFFFFF"
+        android:textSize="16sp"
+        android:checked="true"
+        android:buttonTint="#FFFFFFFF" />
+
+</LinearLayout>
