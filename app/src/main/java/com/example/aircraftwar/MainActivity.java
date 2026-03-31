@@ -3,9 +3,9 @@ package com.example.aircraftwar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.CheckBox;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
 
 /**
  * 主菜单 Activity：选择难度和音效开关
@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         Button btnEasy = findViewById(R.id.btn_easy);
         Button btnCommon = findViewById(R.id.btn_common);
         Button btnInferno = findViewById(R.id.btn_inferno);
-        CheckBox cbSound = findViewById(R.id.cb_sound);
+        SwitchCompat cbSound = findViewById(R.id.cb_sound);
 
         btnEasy.setOnClickListener(v -> startGame(0, cbSound.isChecked()));
         btnCommon.setOnClickListener(v -> startGame(1, cbSound.isChecked()));

@@ -49,7 +49,8 @@ public class GameActivity extends AppCompatActivity implements GameView.GameOver
         difficulty = getIntent().getIntExtra("difficulty", 0);
         soundEnabled = getIntent().getBooleanExtra("soundEnabled", true);
 
-        dataDao = new DataDaoImpl(getFilesDir());
+        // 按难度使用独立榜单文件，确保排行榜按难度隔离
+        dataDao = new DataDaoImpl(getFilesDir(), difficulty);
 
         gameView = new GameView(this, difficulty, soundEnabled, this);
         setContentView(gameView);

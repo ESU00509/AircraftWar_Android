@@ -5,6 +5,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DataDaoImpl implements DataDao {
+    private static final String DEFAULT_DATA_FILE = "game_data.dat";
+    private static final String EASY_DATA_FILE = "game_data_easy.dat";
+    private static final String COMMON_DATA_FILE = "game_data_common.dat";
+    private static final String INFERNO_DATA_FILE = "game_data_inferno.dat";
+
     private List<Data> database;
     private File dataFile;
 
@@ -12,9 +17,32 @@ public class DataDaoImpl implements DataDao {
      * @param filesDir 应用内部存储目录，如 context.getFilesDir()
      */
     public DataDaoImpl(File filesDir) {
+        this(filesDir, DEFAULT_DATA_FILE);
+    }
+
+    /**
+     * @param filesDir 应用内部存储目录，如 context.getFilesDir()
+     * @param difficulty 难度：0=EASY, 1=COMMON, 2=INFERNO
+     */
+    public DataDaoImpl(File filesDir, int difficulty) {
+        this(filesDir, resolveDataFileNameByDifficulty(difficulty));
+    }
+
+    private DataDaoImpl(File filesDir, String fileName) {
         database = new ArrayList<>();
-        dataFile = new File(filesDir, "game_data.dat");
+        dataFile = new File(filesDir, fileName);
         loadFromFile();
+    }
+
+    private static String resolveDataFileNameByDifficulty(int difficulty) {
+        switch (difficulty) {
+            case 1:
+                return COMMON_DATA_FILE;
+            case 2:
+                return INFERNO_DATA_FILE;
+            default:
+                return EASY_DATA_FILE;
+        }
     }
 
     public void doAdd(Data newdata) {
